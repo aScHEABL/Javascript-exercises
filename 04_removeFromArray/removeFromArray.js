@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*test 1
 const removeFromArray = function(array, targetElement) {
 for (let i = 0; i < array.length; i++) {
@@ -5,6 +6,18 @@ for (let i = 0; i < array.length; i++) {
     case array[i - 1] === targetElement:
         array.splice(i - 1, 1);
         break;
+=======
+
+const removeFromArray = function(array, ...removeTargetElement) {
+    for (let targetElementIndex = 0; targetElementIndex < removeTargetElement.length; targetElementIndex++) {
+        for (let arrayIndex = 0; arrayIndex < array.length; arrayIndex++) { 
+            switch (true) {
+                case array[arrayIndex - 1] === removeTargetElement[targetElementIndex]: 
+                    array.splice(arrayIndex - 1, 1); 
+                    console.log(array);
+                    break;
+                }
+>>>>>>> b0cc14b (feat: complete 06-leapYears)
 }
 }
 return array;
@@ -23,6 +36,21 @@ const removeFromArray = function(array, ...targetElement) {
     }
     return array;
 }
+
+/*
+const removeFromArray = function(array, removeTargetElement) {
+    for (let i = 0; i < array.length; i++) {
+        switch (true) {
+            case array[i - 1] === removeTargetElement:
+                array.splice(i - 1, 1);
+                console.log(array);
+                break;
+        }
+    }
+    return array;
+    };
+*/
+
 
 // Do not edit below this line
 module.exports = removeFromArray;
