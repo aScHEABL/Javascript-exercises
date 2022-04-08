@@ -1,14 +1,5 @@
-<<<<<<< HEAD
-/*test 1
-const removeFromArray = function(array, targetElement) {
-for (let i = 0; i < array.length; i++) {
-    switch (true) {
-    case array[i - 1] === targetElement:
-        array.splice(i - 1, 1);
-        break;
-=======
 
-const removeFromArray = function(array, ...removeTargetElement) {
+/*const removeFromArray = function(array, ...removeTargetElement) {
     for (let targetElementIndex = 0; targetElementIndex < removeTargetElement.length; targetElementIndex++) {
         for (let arrayIndex = 0; arrayIndex < array.length; arrayIndex++) { 
             switch (true) {
@@ -17,7 +8,6 @@ const removeFromArray = function(array, ...removeTargetElement) {
                     console.log(array);
                     break;
                 }
->>>>>>> b0cc14b (feat: complete 06-leapYears)
 }
 }
 return array;
