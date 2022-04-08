@@ -1,5 +1,5 @@
-
-/*const removeFromArray = function(array, ...removeTargetElement) {
+/*
+const removeFromArray = function(array, ...removeTargetElement) {
     for (let targetElementIndex = 0; targetElementIndex < removeTargetElement.length; targetElementIndex++) {
         for (let arrayIndex = 0; arrayIndex < array.length; arrayIndex++) { 
             switch (true) {
