@@ -45,11 +45,14 @@ const factorial = function(factorialNum) {
   if (factorialNum === 0) {
     factorialNum = 1;
   }
-    let sum = 1;
+  let factorialCountDown = [];
   for (let i = factorialNum; i > 0; i--) {
-    console.log(i);
-    sum *= i;
-    factorial(i - 1);
+    factorialCountDown.push(i);
+  }
+  console.log(factorialCountDown);
+  let sum = 1;
+  for (let i = 0;i < factorialNum ; i++) {
+    sum *= factorialCountDown[i];
   }
   return sum;
 };
