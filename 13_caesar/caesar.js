@@ -1,22 +1,30 @@
 const caesar = function (string, shift) {
-  breakDownTheString = string.split("");
-  encryptedString = "";
-  let exceededNum = 0;
+  const breakDownTheString = string.split("");
+  let encryptedString = "";
   breakDownTheString.forEach((character) => {
+    let charCode = character.charCodeAt(0)
+    if (shift > 25) shift %= 26;
     if (!character.match(/[a-zA-Z]/)) {
       encryptedString += character;
-    } else if (character.charCodeAt(0) <= 90 && character.charCodeAt(0) + shift > 90) { //if the given character is from A to Z and if the character's ASCII code + shift exceeds Z's code.
-      exceededNum = (character.charCodeAt(0) + shift - 65) % 26;
-      encryptedString += String.fromCharCode(65 + exceededNum);
-    } else if (character.codePointAt(0) <= 122 && character.codePointAt(0) + shift > 122) { //if the given character is from a to z and if the character's ASCII code + shift exceeds z's code
-      exceededNum = (character.charCodeAt(0) + shift - 97) % 26;
-      encryptedString += String.fromCharCode(97 + exceededNum);
     } else {
-      encryptedString += String.fromCharCode(character.charCodeAt(0) + shift);
+      let ifUpperOrLowerCaseAtoZ = (charCode <= 90) ? "upperCase" : "lowerCase";
+      console.log(character);
+      console.log(charCode + shift);
+        if (ifUpperOrLowerCaseAtoZ === "upperCase") {
+            if (charCode + shift > 90) {
+              encryptedString += String.fromCharCode((charCode + shift + 65) % 26 + 65);
+            } else if (charCode + shift < 65) {
+              encryptedString += String.fromCharCode((charCode + shift + 65) % 26 + 65);
+            } else encryptedString += String.fromCharCode(charCode + shift);
+        } else if (ifUpperOrLowerCaseAtoZ === "lowerCase") {
+            if (charCode + shift > 122) {
+              encryptedString += String.fromCharCode((charCode + shift + 97) % 26 + 97);
+            } else if (charCode + shift < 97) {
+              encryptedString += String.fromCharCode((charCode + shift + 97) % 26 + 97);
+            } else encryptedString += String.fromCharCode(charCode + shift);
+        }
     }
-  });
-  console.log(breakDownTheString);
-  console.log(encryptedString);
+  })
   return encryptedString;
 };
 
