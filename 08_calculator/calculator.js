@@ -1,60 +1,60 @@
 const add = function(...num) {
-  let sum = 0;
-	for (let i = 0; i < num.length; i++) {
-    switch (true) {
-      case num[i] > num[num.length - 1]:
-        let temporaryPlaceHolder = num[i];
-        num[i] = num[num.length - 1];
-        num[num.length - 1] = temporaryPlaceHolder;
-        break;
-    }
-    sum += num[i];
-  }
+	let sum = 0;
+  num.forEach((value) => sum += value);
   return sum;
 };
 
-const subtract = function(num1, num2) {
-  return num1 - num2;
+const subtract = function(a, b) {
+	return a - b;
 };
 
-const sum = function(array) {
-  let sum = 0;
-	for (let i = 0; i < array.length; i++) {
-    sum += array[i];
-  }
+const sum = (numArray) => {
+  return numArray.reduce((a, c) => {
+    return a + c;
+  }, 0);
+};
+
+/* const multiply = (numArray) {
+  totalSum = 1;
+  numArray.forEach((item) => {
+    let seeIfItemIsZero = (item === 0) ? 1 : item ;
+    totalSum *= item;
+  })
+  return totalSum;
+};
+ */
+
+const multiply = (numArray) => {
+  return numArray.reduce((a, c) => {
+    return a * c;
+  }, 1);
+};
+
+const power = (baseNum, iteration) => {
+	let sum = baseNum;
+  for (let i = 0; i < iteration - 1; i++) {
+    sum *= baseNum;
+  };
   return sum;
 };
 
-const multiply = function(array) {
-  let sum = 1;
-  for (let i = 0; i <= array.length - 1; i++) {
-    sum *= array[i]
-  }
-  return sum;
-};
-
-const power = function(baseNum, iteration) {
-  let sum = baseNum;
-	for (let i = 0; i < iteration - 1; i++) {
-    sum *= baseNum 
-  }
-  return sum;
-};
-
-const factorial = function(factorialNum) {
+const factorial = (factorialNum) => {
+  let result = 0;
+  let numberArray = [];
   if (factorialNum === 0) {
-    factorialNum = 1;
-  }
-  let factorialCountDown = [];
-  for (let i = factorialNum; i > 0; i--) {
-    factorialCountDown.push(i);
-  }
-  console.log(factorialCountDown);
-  let sum = 1;
-  for (let i = 0;i < factorialNum ; i++) {
-    sum *= factorialCountDown[i];
-  }
-  return sum;
+    result = 1;
+  } else if (factorialNum === 1) {
+    result = 1;
+  } else {
+    for (let i = factorialNum; i > 1; i--) {
+      numberArray.push(i);
+    };
+  result = numberArray.reduce((a, c) => {
+    console.log(a);
+    return a * c;
+  }, 1)
+  };
+  return result;
 };
 
 // Do not edit below this line
