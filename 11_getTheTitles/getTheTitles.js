@@ -1,7 +1,6 @@
-const getTheTitles = function(booksMetadata) {
-const titleOfTheBooks = booksMetadata.map((booksMetadata) => booksMetadata.title);
-console.log(titleOfTheBooks);
-return titleOfTheBooks;
+const getTheTitles = (booksMetadata) => {
+    const titleArray = booksMetadata.map((metadata) => metadata.title)
+    return titleArray;
 };
 
 // Do not edit below this line
