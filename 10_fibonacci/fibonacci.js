@@ -1,4 +1,4 @@
-const fibonacci = function(fibonacciIndex) {
+const fibonacci = (fibonacciIndex) => {
     const fibonacciArray = [0,1,1];
     fibonacciIndex = +fibonacciIndex;
     if (fibonacciIndex < 0) {
