@@ -1,24 +1,13 @@
-const palindromes = function (text) {
-text = text.toLowerCase();
-text = text.replaceAll("!", "");
-text = text.replaceAll(",", "");
-text = text.replaceAll(" ", "");
-text = text.replaceAll(".", "");
-console.log(text);
-let reverseText = "";
-console.log(reverseText);
-for (let i = text.length; i > 0; i--) {
-    reverseText += text.charAt(i - 1);
-}
-if (reverseText === text) {
-    return true;
-} else if (reverseText !== text) {
-    return false;
-}
+ const palindromes = (string) => {
+    const regEx = new RegExp(`!|\\.|,|" "`, "g");
+    reverseString = string.split("").reverse().join("").toLowerCase().replaceAll(regEx, "");
+    console.log(`reversed string:${reverseString}`);
+    string = string.replaceAll(regEx, "").toLowerCase();
+    console.log(`string:${string}`);
+    let seeIfBothStringAreEqual = (reverseString === string) ? true : false;
+    return seeIfBothStringAreEqual;
 };
 
-function reverseString(text) {
-}
 
 // Do not edit below this line
 module.exports = palindromes;
