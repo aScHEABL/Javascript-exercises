@@ -1,6 +1,6 @@
 # JavaScript Exercises
 
-This is the javascript exercises from [The Odin Project](https://www.theodinproject.com/) <br>
+This is the javascript exercises from [The Odin Project](https://www.theodinproject.com/lessons/foundations-fundamentals-part-4) <br>
 
 ## Built with <br>
 #### Technologies <br>
