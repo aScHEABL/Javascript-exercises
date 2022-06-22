@@ -1,21 +1,22 @@
-const findTheOldest = function(listOfPeople) {
-    let currentTime = new Date();
-    let currentYear = currentTime.getFullYear();
-    listOfPeople.forEach(function(checkIfAlive) {
-        if (isNaN(checkIfAlive.yearOfDeath)) {
-            checkIfAlive.yearOfDeath = currentYear;
-        }
+const findTheOldest = (peopleArray) => {
+    peopleArray.forEach((person) => {
+        let currentTime = new Date();
+        let currentYear = currentTime.getFullYear();
+        let seeIfPersonAlive = (person.yearOfDeath === undefined) ? true : false;
+        if (seeIfPersonAlive === true) {
+            person.yearOfDeath = currentYear;
+        };
+        console.log(person);
     });
-    console.log(listOfPeople);
-    const mapAges = listOfPeople.map((age) => age.yearOfDeath - age.yearOfBirth);
-    console.log(mapAges);
-    const sortAges = mapAges.sort((a, b) => b - a);
-    console.log(sortAges);
-    const filterTheNonOldest = listOfPeople.filter((theOldestPerson) => theOldestPerson.yearOfDeath - theOldestPerson.yearOfBirth === sortAges[0]);
-    console.log(typeof filterTheNonOldest);
-    console.log(Array.isArray(filterTheNonOldest));
-    console.log(filterTheNonOldest[0]);
-    return filterTheNonOldest[0];
+
+    let metaDataArray = peopleArray.map((person) => {
+        person.age = person.yearOfDeath - person.yearOfBirth;
+        return person;
+    });
+
+    metaDataArray.sort((a, b) => a.age - b.age);
+    console.log(metaDataArray[metaDataArray.length - 1]);
+    return metaDataArray[metaDataArray.length - 1];
 };
 
 // Do not edit below this line
